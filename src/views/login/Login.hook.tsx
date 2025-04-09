@@ -1,10 +1,12 @@
 import { useEffect, useState } from 'react';
 import { AppRouterName } from '../../AppRouter';
 import { LoginState } from './Login.state';
+import InputFormHook from '../../common/hooks/formHook';
 
 /** For login view action */
 function LoginHook() {
     const [componentState, setcomponentState] = useState(new LoginState());
+    const inputFormHook = InputFormHook(componentState, setcomponentState);
 
     /**
      * Login action
@@ -35,7 +37,8 @@ function LoginHook() {
     }, []);
     return {
         componentState,
-        login
+        login,
+        handleFormInputChanged : inputFormHook.handleFormInputChanged,
     };
 }
 
