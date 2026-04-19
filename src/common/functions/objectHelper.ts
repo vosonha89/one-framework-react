@@ -1,6 +1,5 @@
-import { ObjectHelper as FWObjectHelper } from 'one-frontend-framework';
+import { ObjectHelper as FWObjectHelper } from "one-frontend-framework";
 /**
- * ObjectHelper 
+ * ObjectHelper
  */
-export class ObjectHelper extends FWObjectHelper {
-}
+export class ObjectHelper extends FWObjectHelper {}

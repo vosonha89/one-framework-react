@@ -25,7 +25,7 @@ function Login(): React.JSX.Element {
                 <input
                     type="password"
                     placeholder="Enter Password"
-                     id="model.username"
+                    id="psw"
                     name="model.password" required
                     value={elHook.componentState.model.password}
                     onChange={(e) => { elHook.handleFormInputChanged(e.target); }}

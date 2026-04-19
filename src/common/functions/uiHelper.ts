@@ -1,7 +1,6 @@
-import { UIHelper as FWUIHelper } from 'one-frontend-framework';
+import { UIHelper as FWUIHelper } from "one-frontend-framework";
 
 /**
  * UIHelper
  */
-export class UIHelper extends FWUIHelper {
-}
+export class UIHelper extends FWUIHelper {}

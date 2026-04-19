@@ -1,6 +1,65 @@
 # React + TypeScript + Vite
 [![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fvosonha89%2Fone-framework-react.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Fvosonha89%2Fone-framework-react?ref=badge_shield)
 
+## Project Overview
+
+This project is a React 19 + TypeScript application bootstrapped with Vite. It uses dependency injection (tsyringe), protected routes, and multi-language support.
+
+## Getting Started
+
+### 1. Clone the repository
+
+\`\`\`bash
+git clone https://github.com/vosonha89/one-framework-react.git
+cd one-framework-react
+\`\`\`
+
+### 2. Install dependencies
+
+\`\`\`bash
+npm install
+\`\`\`
+
+### 3. Configure environment variables
+
+Copy the example file and update values as needed:
+
+\`\`\`bash
+cp .env.example .env
+\`\`\`
+
+### 4. Run the development server
+
+\`\`\`bash
+npm run dev
+\`\`\`
+
+### 5. Build for production
+
+\`\`\`bash
+npm run build:prod
+\`\`\`
+
+## Environment Variables
+
+See [.env.example](./.env.example) for all required variables:
+
+- \`VITE_APP_API_URL\`: API base URL
+- \`VITE_APP_VERSION\`: Application version
+- \`VITE_APP_TITLE\`: Application name
+- \`VITE_APP_ENV\`: Environment (development/production/uat)
+- \`VITE_IMAGENOSSL\`: Non-SSL image domain
+- \`VITE_IMAGESSL\`: SSL image domain
+
+## Architecture
+
+- **src/**: Main source code
+  - **common/**: Shared hooks, services, constants, components
+  - **views/**: Page components (Home, Login)
+  - **services/**: Business logic (e.g., AuthService)
+  - **assets/language/**: i18n files
+- **ProtectedRoute**: Handles authentication for protected routes
+- **DI**: Uses tsyringe for dependency injection
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 

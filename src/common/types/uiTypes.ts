@@ -1,4 +1,4 @@
 export interface FormInformationProps {
-    id: string;
-    onListRefresh(): void;
+  id: string;
+  onListRefresh(): void;
 }

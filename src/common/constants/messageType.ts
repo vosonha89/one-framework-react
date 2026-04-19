@@ -1,7 +1,6 @@
-import { MessageType as FWMessageType } from 'one-frontend-framework';
+import { MessageType as FWMessageType } from "one-frontend-framework";
 
 /**
  * Common message type
  */
-export class MessageType extends FWMessageType {
-}
+export class MessageType extends FWMessageType {}

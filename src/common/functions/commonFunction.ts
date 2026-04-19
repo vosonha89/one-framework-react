@@ -1,6 +1,5 @@
-import { CommonFunction as FWCommonFunction } from 'one-frontend-framework';
+import { CommonFunction as FWCommonFunction } from "one-frontend-framework";
 /**
  * Common function
  */
-export class CommonFunction extends FWCommonFunction {
-}
+export class CommonFunction extends FWCommonFunction {}
