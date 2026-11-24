@@ -54,6 +54,8 @@ Location: `src/views/<kebab-name>/`. Five files:
 - `<Name>.model.ts` — extends `BaseModel`; fields + `isValid(): boolean`.
 - `<Name>.scss` — styles.
 
+Tailwind CSS v4 utilities are available globally via `src/tailwind.css` (`@import "tailwindcss"`, processed by `@tailwindcss/vite`). Use Tailwind classes alongside the per-view SCSS; keep the SCSS file for component-specific styles. A live showcase of Tailwind-styled basic elements (typography, buttons, inputs, badges, cards, alerts, responsive grid, interactive demos) is available at `/ui-kit` (`src/views/ui-kit/`).
+
 Prefer the generator:
 
 ```bash

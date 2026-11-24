@@ -1,0 +1,4 @@
+/* Tailwind CSS v4 entry (processed by @tailwindcss/vite).
+   Kept separate from index.scss so Sass does not try to resolve the
+   "tailwindcss" import. Utilities coexist with the layered SCSS styles. */
+@import "tailwindcss";

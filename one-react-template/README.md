@@ -17,6 +17,7 @@ library source lives in the sibling [`one-frontend-core/`](../one-frontend-core)
 - **Dependency Injection** — `tsyringe` with `@singleton()` / `@injectable()` services.
 - **Code generator** — `plop` scaffolds new views / services / models that already comply with the rules.
 - **i18n** — English / Vietnamese JSON locale files.
+- **Styling** — Tailwind CSS v4 (`@tailwindcss/vite`) alongside layered SCSS; utilities and component styles coexist. See the `/ui-kit` page for a live showcase of basic elements.
 
 ## Quick start
 
@@ -79,13 +80,15 @@ src/
 │   └── sample.Service.ts
 ├── types/                  # Domain objects (map API responses)
 ├── views/                  # Pages, each split into 5 files
-│   └── sample/
-│       ├── Sample.tsx          # View — UI only
-│       ├── Sample.hook.tsx     # Hook — orchestration / lifecycle
-│       ├── Sample.state.ts     # State — logic (extends ComponentState)
-│       ├── Sample.model.ts     # Model — validation (extends BaseModel)
-│       └── Sample.scss         # Styles
+│   ├── sample/
+│   │   ├── Sample.tsx          # View — UI only
+│   │   ├── Sample.hook.tsx     # Hook — orchestration / lifecycle
+│   │   ├── Sample.state.ts     # State — logic (extends ComponentState)
+│   │   ├── Sample.model.ts     # Model — validation (extends BaseModel)
+│   │   └── Sample.scss         # Styles
+│   └── ui-kit/                 # Tailwind showcase page (/ui-kit)
 ├── App.tsx / AppRouter.tsx / main.tsx
+├── tailwind.css            # Tailwind v4 entry (@import "tailwindcss")
 └── index.scss / App.scss
 ```
 

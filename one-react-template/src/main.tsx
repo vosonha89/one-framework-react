@@ -2,6 +2,7 @@ import "reflect-metadata";
 import { container } from "tsyringe";
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
+import "./tailwind.css";
 import "./index.scss";
 import App from "./App.tsx";
 import { LanguageService } from "./common/services/languageService.ts";

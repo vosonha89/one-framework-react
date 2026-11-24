@@ -12,9 +12,8 @@
     "skipLibCheck": true,
     /* Bundler mode */
     "moduleResolution": "bundler",
-    "baseUrl": ".",
     "paths": {
-      "@core": ["src/core/index.ts"]
+      "@core": ["./src/core/index.ts"]
     },
     "allowImportingTsExtensions": true,
     "resolveJsonModule": true,

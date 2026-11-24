@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./Sample.scss";
 import LanguageHook from "../../common/hooks/languageHook";
 import SampleHook from "./Sample.hook";
@@ -16,6 +17,12 @@ function Sample(): React.JSX.Element {
     return (
       <div className="sample-view">
         <h1>{language.sample.title}</h1>
+        <Link
+          to="/ui-kit"
+          className="text-sm font-medium text-blue-600 hover:underline"
+        >
+          Tailwind UI Kit →
+        </Link>
         <div className="sample-search">
           <input
             type="text"
@@ -52,7 +59,7 @@ function Sample(): React.JSX.Element {
         </ul>
 
         {elHook.componentState.items.length === 0 ? (
-          <p>{language.sample.empty}</p>
+          <p className="italic text-gray-500">{language.sample.empty}</p>
         ) : null}
       </div>
     );
