@@ -16,30 +16,37 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0",
-    "react-router-dom": "^7.2.0",
-    "reflect-metadata": "^0.1.13",
-    "tsyringe": "^4.8.0",
-    "validator": "^13.12.0"
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1",
+    "react-router-dom": "^7.18.6",
+    "reflect-metadata": "^0.2.2",
+    "tsyringe": "^4.10.0",
+    "validator": "^13.15.35"
   },
   "devDependencies": {
-    "@eslint/js": "^9.21.0",
-    "@types/react": "^19.0.10",
-    "@types/react-dom": "^19.0.4",
-    "@types/validator": "^13.12.2",
-    "@vitejs/plugin-react": "^4.3.4",
-    "eslint": "^9.21.0",
+    "@eslint/js": "^9.39.5",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "@types/validator": "^13.15.10",
+    "@vitejs/plugin-react": "^5.2.0",
+    "eslint": "^9.39.5",
     "eslint-import-resolver-typescript": "^4.4.5",
-    "eslint-plugin-boundaries": "^5.0.1",
-    "eslint-plugin-jsdoc": "^50.6.0",
-    "eslint-plugin-react-hooks": "^5.0.0",
-    "eslint-plugin-react-refresh": "^0.4.19",
-    "globals": "^15.15.0",
-    "plop": "^4.0.1",
-    "sass-embedded": "^1.85.1",
-    "typescript": "~5.7.2",
-    "typescript-eslint": "^8.24.1",
-    "vite": "^6.2.0"
+    "eslint-plugin-boundaries": "^7.4.4",
+    "eslint-plugin-jsdoc": "^65.5.3",
+    "eslint-plugin-react-hooks": "^7.1.1",
+    "eslint-plugin-react-refresh": "^0.5.8",
+    "globals": "^17.14.0",
+    "plop": "^4.0.5",
+    "sass-embedded": "^1.108.2",
+    "typescript": "~5.9.3",
+    "typescript-eslint": "^8.74.0",
+    "vite": "^7.3.8"
+  },
+  "overrides": {
+    "handlebars": "^4.7.10"
+  },
+  "allowScripts": {
+    "esbuild@0.28.2": true,
+    "@parcel/watcher@2.6.0": true
   }
 }

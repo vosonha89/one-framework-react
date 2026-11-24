@@ -25,18 +25,22 @@ const boundarySettings = {
   'boundaries/ignore': ['**/*.d.ts'],
 }
 
+// Helpers for the boundaries v7 object-selector / policy syntax.
+const fromType = (type) => ({ element: { type } })
+const toTypes = (...types) => types.map((type) => ({ to: { element: { type } } }))
+
 const boundaryRules = {
-  'boundaries/element-types': [
+  'boundaries/dependencies': [
     'error',
     {
       default: 'disallow',
-      rules: [
-        { from: 'core', allow: ['core'] },
-        { from: 'common', allow: ['common', 'core'] },
-        { from: 'services', allow: ['common', 'services', 'types', 'core'] },
-        { from: 'types', allow: ['common', 'services', 'types', 'core'] },
-        { from: 'views', allow: ['common', 'services', 'types', 'views', 'core'] },
-        { from: 'root', allow: ['common', 'services', 'types', 'views', 'root', 'core'] },
+      policies: [
+        { from: fromType('core'), allow: toTypes('core') },
+        { from: fromType('common'), allow: toTypes('common', 'core') },
+        { from: fromType('services'), allow: toTypes('common', 'services', 'types', 'core') },
+        { from: fromType('types'), allow: toTypes('common', 'services', 'types', 'core') },
+        { from: fromType('views'), allow: toTypes('common', 'services', 'types', 'views', 'core') },
+        { from: fromType('root'), allow: toTypes('common', 'services', 'types', 'views', 'root', 'core') },
       ],
     },
   ],
