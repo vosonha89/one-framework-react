@@ -1,0 +1,17 @@
+import { ComponentState } from "../../common/types/componentState";
+import { {{pascalCase name}}Model } from "./{{pascalCase name}}.model";
+
+/**
+ * State for the {{pascalCase name}} view.
+ */
+export class {{pascalCase name}}State extends ComponentState {
+  public model = new {{pascalCase name}}Model();
+  public modelPropName = "model";
+
+  /**
+   * Initialize the view state.
+   */
+  public async init(): Promise<void> {
+    this.isReady = true;
+  }
+}

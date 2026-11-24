@@ -1,0 +1,41 @@
+{
+  "appName": "One React Template",
+  "label": {
+    "hi": "Hello",
+    "error": "Error",
+    "warning": "Warning",
+    "success": "Success",
+    "create": "Create",
+    "edit": "Edit",
+    "delete": "Delete",
+    "list": "List",
+    "first": "First",
+    "last": "Last",
+    "next": "Next",
+    "previous": "Previous",
+    "show": "Show",
+    "records": "Records",
+    "pageOf": "Page {page} of {total}",
+    "status": "Status",
+    "search": "Search",
+    "save": "Save",
+    "information": "Information",
+    "active": "Active",
+    "inactive": "Inactive",
+    "select": "Select"
+  },
+  "normalMessage": {
+    "saveSuccess": "Data saved successfully."
+  },
+  "errorMessage": {
+    "internalServerError": "Application error! Please contact support.",
+    "requiredField": "{field} must not be empty!"
+  },
+  "sample": {
+    "title": "Sample Items",
+    "search": "Search",
+    "keyword": "Keyword",
+    "empty": "No items found.",
+    "price": "Price"
+  }
+}

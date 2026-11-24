@@ -1,0 +1,36 @@
+.sample-view {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 24px;
+
+  .sample-search {
+    display: flex;
+    gap: 8px;
+
+    input {
+      flex: 1;
+      padding: 8px;
+    }
+
+    button {
+      padding: 8px 16px;
+      cursor: pointer;
+    }
+  }
+
+  .sample-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    li {
+      padding: 8px 0;
+      border-bottom: 1px solid #eee;
+    }
+  }
+
+  .text-danger {
+    color: #d32f2f;
+  }
+}

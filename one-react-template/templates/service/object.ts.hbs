@@ -1,0 +1,25 @@
+import { AbstractObjectType } from "@core";
+import { {{pascalCase name}}Response } from "../services/responseObject/{{camelCase name}}.Response";
+
+/**
+ * Domain object for the {{pascalCase name}} feature.
+ */
+export class {{pascalCase name}}Object extends AbstractObjectType<{{pascalCase name}}Response> {
+  public id!: string;
+  public name!: string;
+
+  /**
+   * Constructor.
+   */
+  public constructor() {
+    super();
+  }
+
+  /**
+   * Map an API response into the domain object.
+   * @param object Raw API object.
+   */
+  public override map(object: {{pascalCase name}}Response): void {
+    super.map(object);
+  }
+}

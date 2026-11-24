@@ -1,0 +1,48 @@
+import { injectable } from "tsyringe";
+import { BaseService, SystemError } from "../common/services/baseService";
+import { AppEnvironment } from "../common/constants/appEnvironment";
+import { {{pascalCase name}}Request } from "./requestObject/{{camelCase name}}.Request";
+import { {{pascalCase name}}Response } from "./responseObject/{{camelCase name}}.Response";
+import { {{pascalCase name}}Object } from "../types/{{camelCase name}}Object";
+
+/**
+ * Business service for the {{pascalCase name}} feature.
+ */
+@injectable()
+export class {{pascalCase name}}Service extends BaseService {
+  public apiUrl: { [key: string]: string } = {
+    baseUrl: AppEnvironment.VITE_APP_API_URL + "/{{kebabCase name}}",
+  };
+
+  /**
+   * Get {{pascalCase name}} data from the API.
+   * @param request Query request.
+   * @returns The mapped object or a system error.
+   */
+  public async getData(
+    request: {{pascalCase name}}Request,
+  ): Promise<{{pascalCase name}}Object | SystemError> {
+    const me = this;
+    try {
+      const headers = me.getDefaultHeader();
+      const requestOptions: RequestInit = {
+        method: "GET",
+        headers,
+        redirect: "follow",
+      };
+      const response = await fetch(
+        `${me.apiUrl.baseUrl}?id=${request.id}`,
+        requestOptions,
+      );
+      if (response.ok) {
+        const result = (await response.json()) as {{pascalCase name}}Response;
+        const object = new {{pascalCase name}}Object();
+        object.map(result);
+        return object;
+      }
+      return me.handleError(new Error("{{pascalCase name}} request failed"));
+    } catch (error) {
+      return me.handleError(error as Error);
+    }
+  }
+}

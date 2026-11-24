@@ -1,0 +1,16 @@
+# ONE Framework — Core Rules
+
+This package is the **framework-agnostic core** of the ONE framework. It must stay free of any UI-framework dependency (React, Vue, Angular, DOM rendering libs).
+
+## Architecture
+- `src/constants/` — enums and constant classes (`StatusCode`, `RequestMethod`, `StorageKey`, `LanguageCode`, `MessageType`, `ConstantValue`).
+- `src/types/` — base contracts (`AbstractModel`, `BaseObject`, `ComponentState`, `AnyType`, `ICommonSharingData`).
+- `src/functions/` — static helpers (`ObjectHelper`, `CommonFunction`, `UIHelper`).
+- `src/services/` — abstract service contracts (`AbstractHttpService`, `AbstractRoutingService`, `AbstractValidationService`, `AbstractStorageService`, `AbstractLoggingService`, `AbstractLoadingService`, `AbstractLanguageService`) plus DI singletons (`SharingDataService`, `RealTimeSharingDataService`).
+
+## Rules
+1. Never import a UI framework here. Framework-specific adapters live in sibling packages (`packages/react`, …).
+2. Public surface is exported through `src/index.ts`. Add new exports there.
+3. Use `tsyringe` (`@singleton`, `@injectable`) for services; `reflect-metadata` must be imported by consumers at entry.
+4. Keep `strict` TypeScript on. Build with `npm run build` (tsc → `lib/`), lint with `npm run lint`.
+5. Follow JSDoc on all public classes/methods. See `SKILLS.md` for the skill catalog.

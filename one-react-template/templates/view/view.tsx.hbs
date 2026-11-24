@@ -1,0 +1,23 @@
+import React from "react";
+import "./{{pascalCase name}}.scss";
+import {{pascalCase name}}Hook from "./{{pascalCase name}}.hook";
+import NotReady from "../../common/components/notReady/NotReady";
+
+/**
+ * {{pascalCase name}} view UI. Renders only; logic lives in the hook/state.
+ * @returns The view element.
+ */
+function {{pascalCase name}}(): React.JSX.Element {
+  const elHook = {{pascalCase name}}Hook();
+
+  if (elHook.componentState.isReady) {
+    return (
+      <div className="{{kebabCase name}}-view">
+        <h1>{{pascalCase name}}</h1>
+      </div>
+    );
+  }
+  return <NotReady />;
+}
+
+export default {{pascalCase name}};

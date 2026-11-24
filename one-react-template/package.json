@@ -1,0 +1,45 @@
+{
+  "name": "one-react-template",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Layered React 19 + Vite + TypeScript template with strict OOP, DI and View-Hook-State-Model pattern",
+  "scripts": {
+    "start": "npm run lint && npm run dev",
+    "dev": "vite --mode development",
+    "build:dev": "npm run lint && tsc -b && vite build --mode development",
+    "build:uat": "npm run lint && tsc -b && vite build --mode uat",
+    "build:prod": "npm run lint && tsc -b && vite build --mode production",
+    "lint": "eslint .",
+    "typecheck": "tsc -b",
+    "generate": "plop",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "react-router-dom": "^7.2.0",
+    "reflect-metadata": "^0.1.13",
+    "tsyringe": "^4.8.0",
+    "validator": "^13.12.0"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.21.0",
+    "@types/react": "^19.0.10",
+    "@types/react-dom": "^19.0.4",
+    "@types/validator": "^13.12.2",
+    "@vitejs/plugin-react": "^4.3.4",
+    "eslint": "^9.21.0",
+    "eslint-import-resolver-typescript": "^4.4.5",
+    "eslint-plugin-boundaries": "^5.0.1",
+    "eslint-plugin-jsdoc": "^50.6.0",
+    "eslint-plugin-react-hooks": "^5.0.0",
+    "eslint-plugin-react-refresh": "^0.4.19",
+    "globals": "^15.15.0",
+    "plop": "^4.0.1",
+    "sass-embedded": "^1.85.1",
+    "typescript": "~5.7.2",
+    "typescript-eslint": "^8.24.1",
+    "vite": "^6.2.0"
+  }
+}

@@ -1,0 +1,44 @@
+import { useEffect, useState } from "react";
+import { {{pascalCase name}}State } from "./{{pascalCase name}}.state";
+
+/**
+ * Result returned by the {{pascalCase name}} hook.
+ */
+export interface {{pascalCase name}}HookResult {
+  componentState: {{pascalCase name}}State;
+}
+
+/**
+ * Hook orchestrating the {{pascalCase name}} view: state and lifecycle.
+ * @returns The view state.
+ */
+function {{pascalCase name}}Hook(): {{pascalCase name}}HookResult {
+  const [componentState, setcomponentState] = useState<{{pascalCase name}}State>(
+    new {{pascalCase name}}State(),
+  );
+
+  useEffect(() => {
+    let ignore = false;
+    /**
+     * Load the page on first render, guarded against unmount/double-invoke.
+     */
+    async function loadPage(): Promise<void> {
+      const pageState: {{pascalCase name}}State =
+        componentState.copy<{{pascalCase name}}State>();
+      await pageState.init();
+      if (!ignore) {
+        setcomponentState(pageState);
+      }
+    }
+    void loadPage();
+    return () => {
+      ignore = true;
+    };
+    // Init runs once; state is copied to avoid stale closures.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  return { componentState };
+}
+
+export default {{pascalCase name}}Hook;
