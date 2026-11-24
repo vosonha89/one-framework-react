@@ -136,7 +136,7 @@ export default tseslint.config(
     },
   },
   {
-    files: ['*.config.js', 'plopfile.mjs'],
+    files: ['*.config.js', 'plopfile.mjs', 'scripts/**/*.mjs'],
     extends: [js.configs.recommended],
     languageOptions: {
       ecmaVersion: 2022,

@@ -10,6 +10,10 @@ These rules are enforced by ESLint (`eslint.config.js`) and TypeScript (`tsconfi
 - **Stack**: React 19 + TypeScript + Vite, DI via `tsyringe`; self-contained core lib in `src/core/` (alias `@core`).
 - **Design**: strict OOP, SOLID, layered structure, View‑Hook‑State‑Model pattern.
 - **Layers**: `core` (abstract base) → `common` (shared) → `services` / `types` (business/domain) → `views` (pages).
+- **Bootstrap**: a new app starts with `npx degit vosonha89/one-framework-react/one-react-template <app>`,
+  then `npm run init -- --name <app> --title "<Title>" [--strip-demo]`. The script renames branding and can
+  remove the demo feature; the run is recorded in `.template.json` and re-running requires `--force`.
+  Never delete `src/views/sample/` or `src/views/ui-kit/` by hand — the router imports them; use `--strip-demo`.
 
 ---
 
@@ -55,6 +59,9 @@ Location: `src/views/<kebab-name>/`. Five files:
 - `<Name>.scss` — styles.
 
 Tailwind CSS v4 utilities are available globally via `src/tailwind.css` (`@import "tailwindcss"`, processed by `@tailwindcss/vite`). Use Tailwind classes alongside the per-view SCSS; keep the SCSS file for component-specific styles. A live showcase of Tailwind-styled basic elements (typography, buttons, inputs, badges, cards, alerts, responsive grid, interactive demos) is available at `/ui-kit` (`src/views/ui-kit/`).
+
+After `npm run init -- --strip-demo` the app has a single UI-only starter view (`src/views/home/Home.tsx`);
+replace it with generated layered views as features are added.
 
 Prefer the generator:
 
