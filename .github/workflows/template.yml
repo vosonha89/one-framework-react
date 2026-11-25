@@ -38,5 +38,37 @@ jobs:
       - name: Typecheck
         run: npm run typecheck
 
+      - name: Unit tests
+        run: npm run test
+
       - name: Production build
         run: npm run build:prod
+
+  # Proves that plop-generated code complies with the strict quality gate.
+  # Uses distinct names so no generator overwrites another's output.
+  generator-smoke:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+
+      - name: Install dependencies
+        run: npm install --no-audit --no-fund
+        # If the npm sandbox blocks install scripts (esbuild, @parcel/watcher),
+        # uncomment the approve step below — see template README §3.
+        # - run: npm install-scripts approve esbuild @parcel/watcher
+
+      - name: Scaffold a generated feature
+        run: |
+          npx plop view -- --name Demo
+          npx plop service -- --name Demo
+          npx plop model -- --name Widget
+
+      - name: Lint generated code
+        run: npm run lint
+
+      - name: Typecheck generated code
+        run: npm run typecheck

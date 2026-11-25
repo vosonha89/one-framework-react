@@ -35,3 +35,9 @@ jobs:
 
       - name: Lint core
         run: npm run lint
+
+      - name: Typecheck core
+        run: npm run typecheck
+
+      - name: Unit tests
+        run: npm run test
