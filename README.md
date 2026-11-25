@@ -76,6 +76,11 @@ npm run build:all     # every workspace, --if-present
 npm run lint:all
 ```
 
+GitHub Actions runs both quality gates on every push to `main` and on every
+pull request: see [`.github/workflows/template.yml`](./.github/workflows/template.yml)
+and [`.github/workflows/core.yml`](./.github/workflows/core.yml). Each workflow
+is filtered to its own project's paths, so a change only builds what it touches.
+
 ## How the core relates to the template
 
 The abstract core is **vendored** into `one-react-template/src/core/` and imported through the `@core` alias, so
@@ -90,8 +95,7 @@ vendored core, and check `.template.json` for the template version a project sta
 
 ## License
 
-The template declares MIT — see [License](./one-react-template/README.md#license). The repository root does not
-carry a LICENSE document yet; add one if you want GitHub and license scanners to report it.
+MIT — see [LICENSE](./LICENSE). Both projects in this monorepo (`one-react-template` and `one-frontend-core`) are released under it.
 
 <!--
   Maintainability: this file links; it does not copy. Flags, project structure, layer rules, quality gate and
