@@ -4,9 +4,9 @@ This package is the **framework-agnostic core** of the ONE framework. It must st
 
 ## Architecture
 - `src/constants/` — enums and constant classes (`StatusCode`, `RequestMethod`, `StorageKey`, `LanguageCode`, `MessageType`, `ConstantValue`).
-- `src/types/` — base contracts (`AbstractModel`, `BaseObject`, `ComponentState`, `AnyType`, `ICommonSharingData`).
+- `src/types/` — base contracts (`AbstractModel`, `ErrorModel`, `AbstractType`, `AbstractObjectType`, `ComponentState`, `AnyType`, `ICommonSharingData`).
 - `src/functions/` — static helpers (`ObjectHelper`, `CommonFunction`, `UIHelper`).
-- `src/services/` — abstract service contracts (`AbstractHttpService`, `AbstractRoutingService`, `AbstractValidationService`, `AbstractStorageService`, `AbstractLoggingService`, `AbstractLoadingService`, `AbstractLanguageService`) plus DI singletons (`SharingDataService`, `RealTimeSharingDataService`).
+- `src/services/` — abstract service contracts (`AbstractHttpService`, `AbstractRoutingService`, `AbstractValidationService`, `AbstractStorageService`, `AbstractLogggingService`, `AbstractLoadingService`, `AbstractLanguageService`) plus DI singletons (`SharingDataService`, `RealTimeSharingDataService`).
 
 ## Rules
 1. Never import a UI framework here. Framework-specific adapters live in sibling packages (`packages/react`, …).
