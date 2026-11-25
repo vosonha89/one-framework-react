@@ -1,5 +1,7 @@
 # One Framework
 
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fvosonha89%2Fone-framework-react.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Fvosonha89%2Fone-framework-react?ref=badge_shield)
+
 A monorepo holding two independent projects: **`one-react-template/`**, a layered React 19 + Vite + TypeScript
 application template with a built-in project initializer and code generators, and **`one-frontend-core/`**, the
 upstream framework-agnostic core library those layers are built on. There is no root `package.json`: install and
