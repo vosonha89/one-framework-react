@@ -63,6 +63,7 @@ Quality gate for the template (run inside `one-react-template/`):
 ```bash
 npm run lint          # ESLint: type-checked, OOP, JSDoc, layer boundaries
 npm run typecheck     # tsc -b
+npm run test          # vitest unit + component tests (jsdom)
 npm run build:prod    # lint + typecheck + vite build (also build:dev / build:uat)
 ```
 
@@ -72,6 +73,7 @@ Core library workspaces (run inside `one-frontend-core/`):
 npm install
 npm run build         # packages/core: tsc -> lib/
 npm run lint
+npm run test          # packages/core: vitest unit tests
 npm run build:all     # every workspace, --if-present
 npm run lint:all
 ```

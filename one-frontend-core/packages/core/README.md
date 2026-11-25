@@ -13,6 +13,7 @@ npm install
 ```bash
 npm run build   # tsc → lib/ (CommonJS + .d.ts)
 npm run lint    # eslint . (ESLint 9 flat config)
+npm run test    # vitest run (jsdom)
 ```
 
 ## Usage

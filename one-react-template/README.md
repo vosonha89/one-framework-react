@@ -17,6 +17,7 @@ library source lives in the sibling [`one-frontend-core/`](../one-frontend-core)
 - **Dependency Injection** — `tsyringe` with `@singleton()` / `@injectable()` services.
 - **Code generator** — `plop` scaffolds new views / services / models that already comply with the rules.
 - **i18n** — English / Vietnamese JSON locale files.
+- **Tested** — vitest + @testing-library/react (jsdom); `npm run test` covers helpers, models, state and the shared components.
 - **Styling** — Tailwind CSS v4 (`@tailwindcss/vite`) alongside layered SCSS; utilities and component styles coexist. See the `/ui-kit` page for a live showcase of basic elements.
 
 ## Quick start
@@ -115,7 +116,7 @@ src/
 │   ├── constants/          # LanguageCode, StatusCode, StorageKey, ...
 │   └── services/           # AbstractStorageService, AbstractLogggingService
 ├── common/                 # Shared lower layer (no app business)
-│   ├── components/         # Shared UI (NotReady, ...)
+│   ├── components/         # Shared UI (NotReady, ErrorBoundary)
 │   ├── constants/          # AppEnvironment, StorageKey, AlertType, ...
 │   ├── functions/          # ObjectHelper, CommonFunction, UIHelper
 │   ├── hooks/              # formHook, globalHook, languageHook
@@ -134,6 +135,7 @@ src/
 │   │   ├── Sample.model.ts     # Model — validation (extends BaseModel)
 │   │   └── Sample.scss         # Styles
 │   └── ui-kit/                 # Tailwind showcase page (/ui-kit)
+├── test/                    # Vitest setup (reflect-metadata polyfill)
 ├── App.tsx / AppRouter.tsx / main.tsx
 ├── tailwind.css            # Tailwind v4 entry (@import "tailwindcss")
 └── index.scss / App.scss
@@ -199,8 +201,9 @@ Run before committing:
 
 ```bash
 npm run lint        # ESLint (strict type-checked + OOP + JSDoc + boundaries)
-npm run typecheck     # tsc -b
-npm run build:prod    # lint + typecheck + vite build (also :dev / :uat)
+npm run typecheck   # tsc -b
+npm run test        # vitest unit + component tests (jsdom)
+npm run build:prod  # lint + typecheck + vite build (also :dev / :uat)
 ```
 
 ## Receiving template updates

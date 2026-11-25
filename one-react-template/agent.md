@@ -60,8 +60,9 @@ Location: `src/views/<kebab-name>/`. Five files:
 
 Tailwind CSS v4 utilities are available globally via `src/tailwind.css` (`@import "tailwindcss"`, processed by `@tailwindcss/vite`). Use Tailwind classes alongside the per-view SCSS; keep the SCSS file for component-specific styles. A live showcase of Tailwind-styled basic elements (typography, buttons, inputs, badges, cards, alerts, responsive grid, interactive demos) is available at `/ui-kit` (`src/views/ui-kit/`).
 
-After `npm run init -- --strip-demo` the app has a single UI-only starter view (`src/views/home/Home.tsx`);
-replace it with generated layered views as features are added.
+After `npm run init -- --strip-demo` the app has a single UI-only starter view (`src/views/home/Home.tsx`)
+plus the shared `NotFound` (404) view and the root `ErrorBoundary`; replace the starter with generated
+layered views as features are added.
 
 Prefer the generator:
 
@@ -101,6 +102,7 @@ For every task, run and pass:
 ```bash
 npm run lint        # must be 0 errors
 npm run typecheck   # tsc -b, must be 0 errors
+npm run test        # vitest, must be 0 failures
 npm run build:prod  # lint + typecheck + vite build (also :dev / :uat)
 ```
 
