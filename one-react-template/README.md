@@ -231,4 +231,4 @@ See [agent.md](./agent.md) for the full agent/developer rule set.
 
 ## License
 
-MIT
+MIT — the full license text lives in the `LICENSE` file at the root of the source repository.

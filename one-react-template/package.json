@@ -4,6 +4,7 @@
   "version": "1.0.0",
   "type": "module",
   "description": "Layered React 19 + Vite + TypeScript template with strict OOP, DI and View-Hook-State-Model pattern",
+  "license": "MIT",
   "engines": {
     "node": ">=20.19.0"
   },

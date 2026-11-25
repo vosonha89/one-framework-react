@@ -1,6 +1,27 @@
 {
     "name": "one-frontend-core",
     "version": "1.0.1",
+    "description": "Framework-agnostic core library for the ONE frontend framework: abstract contracts, constants, helpers and DI services",
+    "license": "MIT",
+    "author": "vosonha89",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/vosonha89/one-framework-react.git",
+        "directory": "one-frontend-core/packages/core"
+    },
+    "bugs": {
+        "url": "https://github.com/vosonha89/one-framework-react/issues"
+    },
+    "homepage": "https://github.com/vosonha89/one-framework-react/tree/main/one-frontend-core/packages/core#readme",
+    "keywords": [
+        "frontend",
+        "framework",
+        "core",
+        "typescript",
+        "dependency-injection",
+        "tsyringe",
+        "abstract"
+    ],
     "main": "./lib/index.js",
     "types": "./lib/index.d.ts",
     "files": [
