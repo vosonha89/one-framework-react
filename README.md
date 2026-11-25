@@ -73,6 +73,7 @@ Core library workspaces (run inside `one-frontend-core/`):
 npm install
 npm run build         # packages/core: tsc -> lib/
 npm run lint
+npm run typecheck     # packages/core: tsc --noEmit (includes tests)
 npm run test          # packages/core: vitest unit tests
 npm run build:all     # every workspace, --if-present
 npm run lint:all
