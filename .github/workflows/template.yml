@@ -1,0 +1,42 @@
+name: template
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "one-react-template/**"
+      - ".github/workflows/template.yml"
+  pull_request:
+    paths:
+      - "one-react-template/**"
+      - ".github/workflows/template.yml"
+
+defaults:
+  run:
+    working-directory: one-react-template
+
+jobs:
+  quality-gate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          # No lockfile is committed for the template, so no npm cache here.
+
+      - name: Install dependencies
+        run: npm install --no-audit --no-fund
+        # If the npm sandbox blocks install scripts (esbuild, @parcel/watcher),
+        # uncomment the approve step below — see template README §3.
+        # - run: npm install-scripts approve esbuild @parcel/watcher
+
+      - name: Lint
+        run: npm run lint
+
+      - name: Typecheck
+        run: npm run typecheck
+
+      - name: Production build
+        run: npm run build:prod
