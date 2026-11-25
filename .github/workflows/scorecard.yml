@@ -6,6 +6,7 @@ on:
     - cron: '20 7 * * 2'  # Weekly Tuesday 7:20 AM UTC
   push:
     branches: [main]
+  workflow_dispatch:
 
 permissions: read-all
 
