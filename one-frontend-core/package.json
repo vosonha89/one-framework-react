@@ -8,7 +8,9 @@
   "scripts": {
     "build": "npm run build --workspace=one-frontend-core",
     "lint": "npm run lint --workspace=one-frontend-core",
+    "test": "npm run test --workspace=one-frontend-core",
     "build:all": "npm run build --workspaces --if-present",
-    "lint:all": "npm run lint --workspaces --if-present"
+    "lint:all": "npm run lint --workspaces --if-present",
+    "test:all": "npm run test --workspaces --if-present"
   }
 }

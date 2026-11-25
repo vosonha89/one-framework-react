@@ -29,7 +29,9 @@
     ],
     "scripts": {
         "build": "tsc",
-        "lint": "eslint ."
+        "lint": "eslint .",
+        "typecheck": "tsc -p tsconfig.test.json",
+        "test": "vitest run"
     },
     "dependencies": {
         "reflect-metadata": "^0.2.2",
@@ -41,8 +43,10 @@
         "@types/node": "^26.6.6",
         "eslint": "^9.39.5",
         "globals": "^17.14.0",
+        "jsdom": "^31.0.1",
         "typescript": "~6.0.3",
-        "typescript-eslint": "^8.74.0"
+        "typescript-eslint": "^8.74.0",
+        "vitest": "^5.1.1"
     },
     "publishConfig": {
         "access": "public"
