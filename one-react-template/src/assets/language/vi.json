@@ -22,14 +22,19 @@
     "information": "Thông tin",
     "active": "Đang hoạt động",
     "inactive": "Khóa",
-    "select": "Chọn"
+    "select": "Chọn",
+    "loading": "Đang tải…",
+    "pageNotFound": "Không tìm thấy trang",
+    "backHome": "Về trang chủ",
+    "reload": "Tải lại trang"
   },
   "normalMessage": {
     "saveSuccess": "Dữ liệu lưu thành công."
   },
   "errorMessage": {
     "internalServerError": "Lỗi ứng dụng! Vui lòng liên hệ hỗ trợ.",
-    "requiredField": "{field} không được để trống!"
+    "requiredField": "{field} không được để trống!",
+    "unexpectedError": "Đã xảy ra lỗi. Vui lòng tải lại trang."
   },
   "sample": {
     "title": "Dữ liệu mẫu",

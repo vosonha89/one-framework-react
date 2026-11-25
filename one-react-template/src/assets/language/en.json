@@ -22,14 +22,19 @@
     "information": "Information",
     "active": "Active",
     "inactive": "Inactive",
-    "select": "Select"
+    "select": "Select",
+    "loading": "Loading…",
+    "pageNotFound": "Page not found",
+    "backHome": "Back to home",
+    "reload": "Reload page"
   },
   "normalMessage": {
     "saveSuccess": "Data saved successfully."
   },
   "errorMessage": {
     "internalServerError": "Application error! Please contact support.",
-    "requiredField": "{field} must not be empty!"
+    "requiredField": "{field} must not be empty!",
+    "unexpectedError": "Something went wrong. Please reload the page."
   },
   "sample": {
     "title": "Sample Items",

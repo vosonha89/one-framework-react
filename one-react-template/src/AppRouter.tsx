@@ -1,4 +1,4 @@
-import { Navigate } from "react-router-dom";
+import NotFound from "./views/notFound/NotFound";
 import Sample from "./views/sample/Sample";
 import UiKit from "./views/ui-kit/UiKit";
 
@@ -16,15 +16,15 @@ export class AppRouterName {
  */
 export const AppRouter = [
   {
-    path: AppRouterName.noMatch,
-    element: <Navigate to={AppRouterName.home} replace />,
-  },
-  {
     path: AppRouterName.home,
     element: <Sample />,
   },
   {
     path: AppRouterName.uiKit,
     element: <UiKit />,
+  },
+  {
+    path: AppRouterName.noMatch,
+    element: <NotFound />,
   },
 ];

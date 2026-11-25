@@ -27,6 +27,7 @@ export interface SampleText {
 export interface ErrorMessage {
   internalServerError: string;
   requiredField: string;
+  unexpectedError: string;
 }
 
 /**
@@ -55,6 +56,10 @@ export interface Label {
   active: string;
   inactive: string;
   select: string;
+  loading: string;
+  pageNotFound: string;
+  backHome: string;
+  reload: string;
 }
 
 /**

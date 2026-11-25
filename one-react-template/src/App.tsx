@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import "./App.scss";
 import GlobalHook from "./common/hooks/globalHook";
+import ErrorBoundary from "./common/components/errorBoundary/ErrorBoundary";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import { AppRouter } from "./AppRouter";
 
@@ -18,7 +19,11 @@ function App(): React.ReactElement {
     document.title = global.appName;
   }, [global.appName]);
 
-  return <RouterProvider router={router} />;
+  return (
+    <ErrorBoundary>
+      <RouterProvider router={router} />
+    </ErrorBoundary>
+  );
 }
 
 export default App;

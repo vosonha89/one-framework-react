@@ -50,14 +50,20 @@ const DEMO_FILES = [
   "src/views/ui-kit/UiKit.state.ts",
   "src/views/ui-kit/UiKit.model.ts",
   "src/views/ui-kit/UiKit.scss",
+  "src/views/ui-kit/__tests__/UiKit.model.test.ts",
+  "src/views/ui-kit/__tests__/UiKit.state.test.ts",
   "src/services/sample.Service.ts",
   "src/services/requestObject/sample.Request.ts",
   "src/services/responseObject/sample.Response.ts",
   "src/types/sampleObject.ts",
 ];
 
-/** Demo view folders emptied by --strip-demo (removed only when empty). */
-const DEMO_DIRS = ["src/views/sample", "src/views/ui-kit"];
+/** Demo view folders emptied by --strip-demo (removed only when empty, children first). */
+const DEMO_DIRS = [
+  "src/views/sample",
+  "src/views/ui-kit/__tests__",
+  "src/views/ui-kit",
+];
 
 /** Starter home view written by --strip-demo (UI only, Tailwind styled). */
 const HOME_VIEW = `import React from "react";
@@ -88,8 +94,8 @@ export default Home;
 `;
 
 /** Route table written by --strip-demo (demo routes removed). */
-const HOME_ROUTER = `import { Navigate } from "react-router-dom";
-import Home from "./views/home/Home";
+const HOME_ROUTER = `import Home from "./views/home/Home";
+import NotFound from "./views/notFound/NotFound";
 
 /**
  * Application route names.
@@ -104,12 +110,12 @@ export class AppRouterName {
  */
 export const AppRouter = [
   {
-    path: AppRouterName.noMatch,
-    element: <Navigate to={AppRouterName.home} replace />,
-  },
-  {
     path: AppRouterName.home,
     element: <Home />,
+  },
+  {
+    path: AppRouterName.noMatch,
+    element: <NotFound />,
   },
 ];
 `;
