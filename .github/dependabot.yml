@@ -10,28 +10,20 @@ updates:
     directory: "/one-frontend-core"
     schedule:
       interval: "weekly"
-    open-pull-requests-limit: 10
+    open-pull-requests-limit: 5
     reviewers:
       - "vosonha89"
     labels:
       - "dependencies"
       - "npm"
+    ignore:
+      # Avoid major version bumps that may break the build
+      - dependency-name: "*"
+        update-types: ["version-update:semver-major"]
 
   # one-react-template workspace
   - package-ecosystem: "npm"
     directory: "/one-react-template"
-    schedule:
-      interval: "weekly"
-    open-pull-requests-limit: 10
-    reviewers:
-      - "vosonha89"
-    labels:
-      - "dependencies"
-      - "npm"
-
-  # GitHub Actions
-  - package-ecosystem: "github-actions"
-    directory: "/"
     schedule:
       interval: "weekly"
     open-pull-requests-limit: 5
@@ -39,4 +31,24 @@ updates:
       - "vosonha89"
     labels:
       - "dependencies"
+      - "npm"
+    ignore:
+      # Avoid major version bumps that may break the build
+      - dependency-name: "*"
+        update-types: ["version-update:semver-major"]
+
+  # GitHub Actions
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    open-pull-requests-limit: 3
+    reviewers:
+      - "vosonha89"
+    labels:
+      - "dependencies"
       - "github-actions"
+    ignore:
+      # Avoid major version bumps that may break the build
+      - dependency-name: "*"
+        update-types: ["version-update:semver-major"]
